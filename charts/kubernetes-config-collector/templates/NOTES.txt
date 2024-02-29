@@ -1,0 +1,1 @@
+Shinobi Integration has been installed to the {{ .Release.Namespace }} namespace.

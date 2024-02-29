@@ -1,0 +1,14 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  labels:
+    name: shinobi-integration
+  name: shinobi-integration-cluster
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "kubernetes-config-collector.serviceAccountName" . }}
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: shinobi-integration-cluster-readonly
+  apiGroup: rbac.authorization.k8s.io

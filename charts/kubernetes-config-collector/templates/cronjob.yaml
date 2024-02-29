@@ -1,0 +1,23 @@
+{{- $cluster_name := .Values.cluster_name | required ".Values.cluster_name is required." -}}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "kubernetes-config-collector.fullname" . }}
+  labels:
+    {{- include "kubernetes-config-collector.labels" . | nindent 4 }}
+spec:
+  schedule: "*/30 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: {{ include "kubernetes-config-collector.serviceAccountName" . }}
+          containers:
+          - name: {{ .Chart.Name }}
+            securityContext:
+              {{- toYaml .Values.securityContext | nindent 14 }}
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+            env:
+              - name: CLUSTER_ID
+                value: "{{ $cluster_name }}"
+          restartPolicy: OnFailure
