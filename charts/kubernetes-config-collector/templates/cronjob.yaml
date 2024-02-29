@@ -20,4 +20,14 @@ spec:
             env:
               - name: CLUSTER_ID
                 value: "{{ $cluster_name }}"
+              - name: SECRET_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: shinobi-integration-secret
+                    key: shinobiClientApiKey
+              - name: SHINOBI_ENDPOINT
+                valueFrom:
+                  secretKeyRef:
+                    name: shinobi-integration-secret
+                    key: shinobiClientEndPoint
           restartPolicy: OnFailure
