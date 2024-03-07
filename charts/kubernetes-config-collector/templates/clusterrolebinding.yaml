@@ -10,5 +10,5 @@ subjects:
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: shinobi-integration-cluster-readonly
+  name: {{ include "kubernetes-config-collector.fullname" . }}
   apiGroup: rbac.authorization.k8s.io
