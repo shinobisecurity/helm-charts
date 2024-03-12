@@ -22,3 +22,6 @@ helm --create namespace -n shinobi install \
     --set shinobi.endpoint=YYY \
     --set cluster_name=ZZZ
 ```
+> [!IMPORTANT]
+> The helm chart installs a pod with readonly permissions for collecting your cluster configuration.
+> The pod requires outbound HTTPS access to ship this configuration data to your Shinobi installation endpoint.
