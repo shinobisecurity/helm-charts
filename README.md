@@ -28,6 +28,7 @@ helm install --create-namespace -n shinobi \
 ### Upgrade
 
 ```bash
+helm repo update
 helm upgrade -n shinobi shinobi shinobi/kubernetes-config-collector
 ```
 
