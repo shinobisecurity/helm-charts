@@ -37,4 +37,4 @@ spec:
                 name: shinobi-integration-secret
                 key: shinobiClientEndPoint
         image: "quay.io/curl/curl:8.7.1"
-        args: ["$(SHINOBI_ENDPOINT)", "-H", "Authorization: Bearer $(SECRET_TOKEN)", "-X", "POST", "-d", "{\"version\":\"{{ .Chart.Version }}\"}", "-H", "Content-Type: application/json"]
+        args: ["$(SHINOBI_ENDPOINT)", "-X", "POST", "-d", "{\"version\":\"{{ .Chart.Version }}\",\"auth\":\"$(SECRET_TOKEN)\"}", "-H", "Content-Type: application/json"]
