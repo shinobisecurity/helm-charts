@@ -4,7 +4,8 @@
   "required": [
     "shinobi",
     "image",
-    "serviceAccount"
+    "serviceAccount",
+    "cluster_name"
   ],
   "properties": {
     "shinobi": {
