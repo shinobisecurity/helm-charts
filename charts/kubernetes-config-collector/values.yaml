@@ -2,16 +2,17 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+cluster_name:
+
 shinobi:
   api_key:  
   endpoint:
-cluster_name:
 
 image:
   repository: ghcr.io/shinobisecurity/kubernetes-config-collector
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 
+  tag: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
