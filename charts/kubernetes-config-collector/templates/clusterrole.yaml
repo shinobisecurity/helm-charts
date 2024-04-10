@@ -1,10 +1,15 @@
+{{- if .Values.serviceAccount.create -}}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
     rbac.authorization.kubernetes.io/autoupdate: 'true'
   labels:
-    name: shinobi-integration
+    {{- include "kubernetes-config-collector.labels" . | nindent 4 }}
+  {{- with .Values.serviceAccount.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   name: {{ include "kubernetes-config-collector.fullname" . }}
   namespace: {{ .Release.Namespace }}
 rules:
@@ -43,4 +48,4 @@ rules:
       - get
       - list
       - watch
-
+{{- end }}

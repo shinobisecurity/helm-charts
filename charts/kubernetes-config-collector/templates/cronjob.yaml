@@ -1,4 +1,4 @@
-{{- $cluster_name := .Values.cluster_name | required ".Values.cluster_name is required." -}}
+{{- $cluster_name := .Values.cluster_name -}}
 apiVersion: batch/v1
 kind: CronJob
 metadata:
