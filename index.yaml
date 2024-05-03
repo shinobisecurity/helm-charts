@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   kubernetes-config-collector:
   - apiVersion: v2
+    appVersion: sha-b51558c
+    created: "2024-05-03T13:40:55.298866606Z"
+    description: Shinobi Integration for Kubernetes
+    digest: e0472c95decd07400debb1e70494a95d82067791e813ee03bcaa937c357a544c
+    name: kubernetes-config-collector
+    type: application
+    urls:
+    - https://github.com/shinobisecurity/helm-charts/releases/download/kubernetes-config-collector-0.1.17/kubernetes-config-collector-0.1.17.tgz
+    version: 0.1.17
+  - apiVersion: v2
     appVersion: sha-c2e231d
     created: "2024-04-23T14:23:38.929800591Z"
     description: Shinobi Integration for Kubernetes
@@ -151,4 +161,4 @@ entries:
     urls:
     - https://github.com/shinobisecurity/helm-charts/releases/download/kubernetes-config-collector-0.1.0/kubernetes-config-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-23T14:23:38.929900488Z"
+generated: "2024-05-03T13:40:55.298986217Z"
