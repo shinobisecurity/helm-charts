@@ -25,6 +25,13 @@ helm install --create-namespace -n shinobi \
     --set shinobi.endpoint=YYY \
     --set cluster_name=ZZZ
 ```
+
+### Kubeconfig context 
+
+```bash
+kubectl config get-contexts
+```
+
 ### Upgrade
 
 ```bash
